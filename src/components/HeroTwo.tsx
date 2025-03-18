@@ -26,7 +26,7 @@ const HeroTwo = () => {
       </h1>
       <div className="flex justify-center items-center md:flex-row gap-10 flex-col-reverse  md:w-[90%] mx-auto w-[95%]">
         <div className="w-full text-white flex flex-col md:justify-start md:items-start items-center justify-center">
-          <h1 className="font-semibold text-xl">I AM DELEGENT AND CREATIVE</h1>
+          <h1 className="font-semibold text-xl">I AM DILIGENT AND CREATIVE</h1>
           <p className="mt-5 text-sm">
             I am a passionate full-stack web developer with expertise in
             building dynamic, user-friendly applications. Skilled in modern web
