@@ -61,15 +61,19 @@ const HeroThree = () => {
   const submit = async (values: formSchemaType) => {
     console.log(values);
     const { country, email, message, name, phone } = values;
-    await MailSending({
+    const response = await MailSending({
       country: country.split("-")[0],
       email,
       message,
       name,
       phone,
     });
-    toast.success("Message Delivered, check ur mail");
-    reset();
+    if (response) {
+      toast.success("Message Delivered, check ur mail");
+      reset();
+    } else {
+      toast.error("An Error Occured");
+    }
   };
   return (
     <div className="w-full bg-plainblack py-16">

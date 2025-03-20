@@ -5,12 +5,12 @@ import EmailTemplate from "./EmailTemplate";
 
 const transporter = nodemailer.createTransport({
   //   host: "smtp.ethereal.email",
-  //   port: 587,
+  port: 587,
   secure: false, // true for port 465, false for other ports
   service: "gmail",
   auth: {
-    user: process.env.EMail_User,
-    pass: process.env.EMail_Pass,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -28,8 +28,6 @@ export const MailSending = async ({
   name,
   phone,
 }: FormProps) => {
-  console.log(country, email, message, name, phone);
-
   const templates = Handlebars.compile(EmailTemplate);
   const body = templates({
     country: country,
@@ -38,18 +36,13 @@ export const MailSending = async ({
     name: name,
     phone: phone,
   });
-  async function main() {
-    // send mail with defined transport object
-    const info = await transporter.sendMail({
-      from: '"Oluyemi 👻" <no-reply@gmai.com>', // sender address
-      to: `${email}, adedokunoluyemi1@gmail.com`, // list of receivers
-      //   replyTo: "<no reply/>",
-      subject: "Form details", // Subject line
-      html: body, // html body
-    });
-
-    console.log("Message sent: %s", info.messageId);
-  }
-
-  main().catch(console.error);
+  // send mail with defined transport object
+  await transporter.sendMail({
+    from: `"Oluyemi 💻" <${process.env.EMAIL_USER}>`, // sender address
+    to: `${email}, ${process.env.EMAIL_USER}`, // list of receivers
+    replyTo: "no-reply@example.com", // Prevent replies
+    subject: "Form details", // Subject line
+    html: body, // html body
+  });
+  return true;
 };

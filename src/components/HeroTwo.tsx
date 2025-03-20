@@ -41,7 +41,7 @@ const HeroTwo = () => {
                 Download CV
               </Button>
             </Link>
-            <Link href={"#portfolio"}>
+            <Link href="#portfolio">
               <Button
                 size="md"
                 className="text-white px-10 bg-transparent border-2 border-white"
