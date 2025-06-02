@@ -36,19 +36,23 @@ const HeroTwo = () => {
             through clean, maintainable code.
           </p>
           <div className="flex gap-4 mt-8">
-            <Link href={"/Oluyemi_Adedayo_Adedokun_Resume.pdf"} download>
-              <Button size="md" className="text-black px-7 bg-white ">
-                Download CV
-              </Button>
-            </Link>
-            <Link href="#portfolio">
-              <Button
-                size="md"
-                className="text-white px-10 bg-transparent border-2 border-white"
-              >
-                Portfolio
-              </Button>
-            </Link>
+            <Button
+              as={Link}
+              href={"/Oluyemi_Adedayo_Adedokun_Resume.pdf"}
+              download={true}
+              size="md"
+              className="text-black px-7 bg-white "
+            >
+              Download CV
+            </Button>
+            <Button
+              size="md"
+              as={Link}
+              href="#portfolio"
+              className="text-white px-10 bg-transparent border-2 border-white"
+            >
+              Portfolio
+            </Button>
           </div>
         </div>
         <div className="w-full flex justify-center">

@@ -381,11 +381,11 @@ const HeroThree = () => {
                     </CardBody>
                   </Card>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"https://hotel-room-reservation-rust.vercel.app"}>
                   <Card className="py-4">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                       <p className="text-tiny uppercase font-bold">
-                        Hotel Room Reservation (Development level)
+                        Hotel Room Reservation
                       </p>
                       <small className="text-default-500 line-clamp-1">
                         Our Hotel Room Reservation platform makes booking
@@ -401,7 +401,7 @@ const HeroThree = () => {
                       <Image
                         alt="Card background"
                         className="object-cover rounded-xl w-full"
-                        src="/hotel_room.jpg"
+                        src="/reservation.PNG"
                         width={270}
                         height={270}
                       />
