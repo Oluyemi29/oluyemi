@@ -275,6 +275,7 @@ const HeroThree = () => {
                     </CardBody>
                   </Card>
                 </Link>
+
                 <Link href={"https://dogbooking.vercel.app"}>
                   <Card className="py-4">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -302,6 +303,31 @@ const HeroThree = () => {
                     </CardBody>
                   </Card>
                 </Link>
+
+                <Link href={"https://course-enroll-8p3p.vercel.app"}>
+                  <Card className="py-4">
+                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                      <p className="text-tiny uppercase font-bold">
+                        Course Enroll
+                      </p>
+                      <small className="text-default-500 line-clamp-1">
+                        A full-stack web application for managing student course
+                        enrollment, built as part of an internship assessment
+                        for Cosmopolitan University.
+                      </small>
+                    </CardHeader>
+                    <CardBody className="overflow-visible py-2">
+                      <Image
+                        alt="Card background"
+                        className="object-cover rounded-xl w-full"
+                        src="/course-img.PNG"
+                        width={270}
+                        height={270}
+                      />
+                    </CardBody>
+                  </Card>
+                </Link>
+
                 <Link href={"https://dynamic-quiz-tau.vercel.app"}>
                   <Card className="py-4">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -327,6 +353,7 @@ const HeroThree = () => {
                     </CardBody>
                   </Card>
                 </Link>
+
                 <Link href={"https://motor-flame.vercel.app"}>
                   <Card className="py-4">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -354,6 +381,7 @@ const HeroThree = () => {
                     </CardBody>
                   </Card>
                 </Link>
+
                 <Link href={"https://tech-quiz-app-xi.vercel.app"}>
                   <Card className="py-4">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -381,6 +409,7 @@ const HeroThree = () => {
                     </CardBody>
                   </Card>
                 </Link>
+
                 <Link href={"https://hotel-room-reservation-rust.vercel.app"}>
                   <Card className="py-4">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -402,6 +431,36 @@ const HeroThree = () => {
                         alt="Card background"
                         className="object-cover rounded-xl w-full"
                         src="/reservation.PNG"
+                        width={270}
+                        height={270}
+                      />
+                    </CardBody>
+                  </Card>
+                </Link>
+
+                <Link href={"https://ticket-olive-xi.vercel.app"}>
+                  <Card className="py-4">
+                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                      <p className="text-tiny uppercase font-bold">
+                        Ticket Management System
+                      </p>
+                      <small className="text-default-500 line-clamp-1">
+                        A smart and secure Ticket Management Software built with
+                        Next.js, Node.js, Express, and PostgreSQL. This app
+                        supports seamless ticket routing based on category
+                        selection, and offers multi-admin access to manage
+                        categorized tickets efficiently. Featuring robust
+                        authentication, real-time session management, and a
+                        modern UI powered by Tailwind CSS, the system ensures
+                        streamlined issue tracking and resolution in one unified
+                        platform.
+                      </small>
+                    </CardHeader>
+                    <CardBody className="overflow-visible py-2">
+                      <Image
+                        alt="Card background"
+                        className="object-cover rounded-xl w-full"
+                        src="/tms-img.PNG"
                         width={270}
                         height={270}
                       />
