@@ -3,6 +3,7 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const HeroTwo = () => {
   return (
@@ -25,7 +26,20 @@ const HeroTwo = () => {
         WHO AM I?
       </h1>
       <div className="flex justify-center items-center md:flex-row gap-10 flex-col-reverse  md:w-[90%] mx-auto w-[95%]">
-        <div className="w-full text-white flex flex-col md:justify-start md:items-start items-center justify-center">
+        <motion.div
+          initial={{
+            y:300,
+            opacity:0
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="w-full text-white flex flex-col md:justify-start md:items-start items-center justify-center"
+        >
           <h1 className="font-semibold text-xl">I AM DILIGENT AND CREATIVE</h1>
           <p className="mt-5 text-sm">
             I am a passionate full-stack web developer with expertise in
@@ -54,8 +68,21 @@ const HeroTwo = () => {
               Portfolio
             </Button>
           </div>
-        </div>
-        <div className="w-full flex justify-center">
+        </motion.div>
+        <motion.div
+          initial={{
+            y: 300,
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="w-full flex justify-center"
+        >
           <Image
             src={"/oluyemi.jpg"}
             alt="my profile"
@@ -65,7 +92,7 @@ const HeroTwo = () => {
             quality={100}
             className="w-full md:w-[50%] rounded-xl"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

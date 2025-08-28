@@ -22,6 +22,7 @@ import CountryList from "country-list-with-dial-code-and-flag";
 import { Select, SelectItem, SelectedItems, Avatar } from "@heroui/react";
 import { toast } from "react-hot-toast";
 import { MailSending } from "./NodeMailing";
+import { motion } from "framer-motion";
 
 type Country = {
   name: string;
@@ -78,7 +79,18 @@ const HeroThree = () => {
   return (
     <div className="w-full bg-plainblack py-16">
       <div className="md:w-[90%] mx-auto w-[95%] flex justify-center items-center gap-10 md:flex-row flex-col">
-        <div
+        <motion.div
+          initial={{
+            y: 300,
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
           id="services"
           className="text-white w-full flex flex-col md:justify-start md:items-start items-center justify-center"
         >
@@ -125,8 +137,21 @@ const HeroThree = () => {
               </span>
             </p>
           </div>
-        </div>
-        <div className="w-full flex justify-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{
+            y: 300,
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="w-full flex justify-center gap-2"
+        >
           <div className="md:w-[25%] w-[50%] mt-10 flex flex-col gap-2">
             <div className="w-full rounded-lg flex flex-col gap-3  justify-center items-center py-7 bg-lightercolor">
               <div className="flex gap-2 justify-center">
@@ -168,7 +193,7 @@ const HeroThree = () => {
               <p className="text-white text-[0.8rem]">Next js</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* portfolio aspect */}
@@ -248,225 +273,403 @@ const HeroThree = () => {
           {portfolio === "All" && (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <Link href={"https://airbnbclone-kappa-inky.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        AIrbnb Clone
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        Site to book an apartment from any other countries and
-                        to upload available apartment for rent Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Sit, rem sint
-                        quam perspiciatis sequi veritatis id tenetur
-                        exercitationem modi, officia aliquid architecto, ab
-                        accusamus veniam! Veniam aspernatur et vitae
-                        consequuntur.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2 w-full">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/airbnb-clone.png"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://dogbooking.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Dog Booking site
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        Our Dog Booking Site makes it easy to book services for
-                        your furry friend, from grooming and training to
-                        boarding and adoption. With a simple and secure
-                        platform, users can find trusted dog care providers,
-                        schedule appointments, and manage bookings effortlessly.
-                        Whether you need a sitter or a vet visit, we ensure a
-                        hassle-free experience for you and your pet.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/dog-booking.png"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://course-enroll-8p3p.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Course Enroll
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        A full-stack web application for managing student course
-                        enrollment, built as part of an internship assessment
-                        for Cosmopolitan University.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/course-img.PNG"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://dynamic-quiz-tau.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Quiz Application
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        Our Quiz Application is an interactive platform designed
-                        to test knowledge, enhance learning, and provide fun
-                        challenges. With timed quizzes, multiple categories, and
-                        instant results, users can engage in an exciting and
-                        educational experience.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/quiz-application.png"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://motor-flame.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Motor Site
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        Our Motor Site is a dynamic platform for buying,
-                        selling, and exploring vehicles. Whether youre looking
-                        for new or used cars, auto services, or the latest motor
-                        trends, we provide a seamless browsing and booking
-                        experience. With detailed listings, secure transactions,
-                        and expert insights, finding your perfect ride has never
-                        been easier
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/motor-flame.png"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://tech-quiz-app-xi.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Learning Quiz
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        Our Learning Quiz Application is designed to make
-                        education fun and interactive. With a wide range of
-                        subjects, timed challenges, and instant feedback, users
-                        can test their knowledge and improve their learning
-                        experience. Whether for students, teachers, or
-                        self-learners, our platform offers an engaging way to
-                        reinforce concepts and track progress.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/learning-quiz.png"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://hotel-room-reservation-rust.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Hotel Room Reservation
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        Our Hotel Room Reservation platform makes booking
-                        accommodations seamless and hassle-free. With a
-                        user-friendly interface, real-time availability, and
-                        secure payment options, travelers can find and reserve
-                        the perfect stay in just a few clicks. Whether for
-                        business trips or vacations, we ensure a smooth and
-                        convenient booking experience.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/reservation.PNG"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
-
-                <Link href={"https://ticket-olive-xi.vercel.app"}>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        Ticket Management System
-                      </p>
-                      <small className="text-default-500 line-clamp-1">
-                        A smart and secure Ticket Management Software built with
-                        Next.js, Node.js, Express, and PostgreSQL. This app
-                        supports seamless ticket routing based on category
-                        selection, and offers multi-admin access to manage
-                        categorized tickets efficiently. Featuring robust
-                        authentication, real-time session management, and a
-                        modern UI powered by Tailwind CSS, the system ensures
-                        streamlined issue tracking and resolution in one unified
-                        platform.
-                      </small>
-                    </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl w-full"
-                        src="/tms-img.PNG"
-                        width={270}
-                        height={270}
-                      />
-                    </CardBody>
-                  </Card>
-                </Link>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://mvfarm.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">MV FARM</p>
+                        <small className="text-default-500 line-clamp-1">
+                          At MV Farm, we are passionate about connecting rabbit
+                          breeders,farmers, and buyers through a trusted and
+                          convenient online platform.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2 w-full">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/mv-prod.PNG"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://workcity-chat-frontend-ten.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Real Time Chat App
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          This is a Real Time Chat App, built using React and
+                          Vite. It provides a responsive interface for chatting
+                          with admin,agent,designer,merchant and customer.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2 w-full">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/chatapp.PNG"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://airbnbclone-kappa-inky.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          AIrbnb Clone
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          Site to book an apartment from any other countries and
+                          to upload available apartment for rent Lorem ipsum
+                          dolor sit amet consectetur adipisicing elit. Sit, rem
+                          sint quam perspiciatis sequi veritatis id tenetur
+                          exercitationem modi, officia aliquid architecto, ab
+                          accusamus veniam! Veniam aspernatur et vitae
+                          consequuntur.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2 w-full">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/airbnb-clone.png"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://dogbooking.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Dog Booking site
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          Our Dog Booking Site makes it easy to book services
+                          for your furry friend, from grooming and training to
+                          boarding and adoption. With a simple and secure
+                          platform, users can find trusted dog care providers,
+                          schedule appointments, and manage bookings
+                          effortlessly. Whether you need a sitter or a vet
+                          visit, we ensure a hassle-free experience for you and
+                          your pet.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/dog-booking.png"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://course-enroll-8p3p.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Course Enroll
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          A full-stack web application for managing student
+                          course enrollment, built as part of an internship
+                          assessment for Cosmopolitan University.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/course-img.PNG"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://dynamic-quiz-tau.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Quiz Application
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          Our Quiz Application is an interactive platform
+                          designed to test knowledge, enhance learning, and
+                          provide fun challenges. With timed quizzes, multiple
+                          categories, and instant results, users can engage in
+                          an exciting and educational experience.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/quiz-application.png"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://motor-flame.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Motor Site
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          Our Motor Site is a dynamic platform for buying,
+                          selling, and exploring vehicles. Whether youre looking
+                          for new or used cars, auto services, or the latest
+                          motor trends, we provide a seamless browsing and
+                          booking experience. With detailed listings, secure
+                          transactions, and expert insights, finding your
+                          perfect ride has never been easier
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/motor-flame.png"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://tech-quiz-app-xi.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Learning Quiz
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          Our Learning Quiz Application is designed to make
+                          education fun and interactive. With a wide range of
+                          subjects, timed challenges, and instant feedback,
+                          users can test their knowledge and improve their
+                          learning experience. Whether for students, teachers,
+                          or self-learners, our platform offers an engaging way
+                          to reinforce concepts and track progress.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/learning-quiz.png"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://hotel-room-reservation-rust.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Hotel Room Reservation
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          Our Hotel Room Reservation platform makes booking
+                          accommodations seamless and hassle-free. With a
+                          user-friendly interface, real-time availability, and
+                          secure payment options, travelers can find and reserve
+                          the perfect stay in just a few clicks. Whether for
+                          business trips or vacations, we ensure a smooth and
+                          convenient booking experience.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/reservation.PNG"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{
+                    y: 300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <Link href={"https://ticket-olive-xi.vercel.app"}>
+                    <Card className="py-4">
+                      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <p className="text-tiny uppercase font-bold">
+                          Ticket Management System
+                        </p>
+                        <small className="text-default-500 line-clamp-1">
+                          A smart and secure Ticket Management Software built
+                          with Next.js, Node.js, Express, and PostgreSQL. This
+                          app supports seamless ticket routing based on category
+                          selection, and offers multi-admin access to manage
+                          categorized tickets efficiently. Featuring robust
+                          authentication, real-time session management, and a
+                          modern UI powered by Tailwind CSS, the system ensures
+                          streamlined issue tracking and resolution in one
+                          unified platform.
+                        </small>
+                      </CardHeader>
+                      <CardBody className="overflow-visible py-2">
+                        <Image
+                          alt="Card background"
+                          className="object-cover rounded-xl w-full"
+                          src="/tms-img.PNG"
+                          width={270}
+                          height={270}
+                        />
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </motion.div>
               </div>
             </>
           )}
@@ -919,7 +1122,20 @@ const HeroThree = () => {
         </div>
       </div>
 
-      <div className="md:w-[90%] text-center mt-10 w-[95%] mx-auto">
+      <motion.div
+        initial={{
+          y: 300,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        className="md:w-[90%] text-center mt-10 w-[95%] mx-auto"
+      >
         <h1
           id="contact"
           className="text-lightercolor font-bold text-2xl underline my-5 underline-offset-4"
@@ -1028,7 +1244,7 @@ const HeroThree = () => {
             </Button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

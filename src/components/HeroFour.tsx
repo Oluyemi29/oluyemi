@@ -7,11 +7,25 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Divider } from "@heroui/react";
+import { motion } from "framer-motion";
 
 const HeroFour = () => {
   return (
     <div className="bg-faidblack py-5">
-      <div className="md:w-[90%] w-[95%] mx-auto">
+      <motion.div
+        initial={{
+          y: 200,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        className="md:w-[90%] w-[95%] mx-auto"
+      >
         <h1 className="text-2xl text-center font-bold underline underline-offset-4 text-white">
           SOCIAL MEDIA
         </h1>
@@ -51,7 +65,7 @@ const HeroFour = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </motion.div>
       <Divider orientation="horizontal" className="my-10 bg-lightercolor" />
       <p className="text-white text-center text-[0.8rem]">
         &copy; copyright @devoluyemi
